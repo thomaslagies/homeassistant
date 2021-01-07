@@ -83,6 +83,8 @@ exclusions. Repeat step 2 for each device as you wish to exclude.
 
 ### Aeotec WallMote Quad (4 Button - 8 Inputs tap/hold)
 
+![Z-Wave WallMote](https://github.com/thomaslagies/homeassistant/blob/main/images/zwave_wallmote.jpg)
+
 [WallMote Quad from Amazon](https://www.amazon.de/gp/product/B017DV4C34/ref=ppx_yo_dt_b_search_asin_title?ie=UTF8&psc=1)
 
 The wallmote is used to trigger:
