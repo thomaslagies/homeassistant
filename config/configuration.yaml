@@ -1,0 +1,33 @@
+homeassistant:
+  customize: !include customize.yaml
+
+default_config:
+tts:
+- platform: google_translate
+zwave:
+  usb_path: /dev/ttyACM0
+binary_sensor:
+- platform: workday
+  country: DE
+  province: BY
+device_tracker:
+- platform: ping
+  interval_seconds: 100
+  consider_home: 600
+  hosts:
+    thomas_handy: 1.1.1.1
+    kathi_handy: 1.1.1.1
+    thomas_pc: 1.1.1.1
+logger:
+  default: info
+  logs:
+    homeassistant.components.yamaha: critical
+    custom_components.my_integration: critical
+timer:
+  laundry:
+    duration: '01:20:00'
+    icon: 'mdi:washing-machine'
+automation: !include automations.yaml
+group: !include groups.yaml
+scene: !include scenes.yaml
+script: !include scripts.yaml
