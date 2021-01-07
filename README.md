@@ -20,6 +20,8 @@ Hosts homeassistant.
 
 ### Aeotec Z-Wave Stick
 
+![Z-Wave Stick](../images/zwave_stick.jpg)
+
 [Z-Wave Stick from Amazon](https://www.amazon.de/gp/product/B00YETCNOE/ref=ppx_yo_dt_b_search_asin_title?ie=UTF8&psc=1)
 
 In order to use them together with homeassistant, you need to have a compatible z-wave stick for your raspberry pi.
