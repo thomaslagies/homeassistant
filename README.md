@@ -81,6 +81,8 @@ Wide range of nice looking colors
 
 ### Devolo Thermostat
 
+![Z-Wave Thermostat](https://github.com/thomaslagies/homeassistant/blob/main/images/zwave_thermostat.jpg)
+
 [Devolo Thermostat from Amazon](https://www.amazon.de/gp/product/B00M2JKABQ/ref=ppx_yo_dt_b_search_asin_title?ie=UTF8&psc=1)
 
 I use these thermostats since they are able to read current temperature. 
@@ -93,6 +95,8 @@ Triggers are:
 - open/closed windows (see door sensors)
 
 ### Smart Things Door Sensor
+
+![Z-Wave Door Sensor](https://github.com/thomaslagies/homeassistant/blob/main/images/zwave_door_sensor.jpg)
 
 [Door Sensor from Amazon](https://www.amazon.de/gp/product/B07FMDR286/ref=ppx_yo_dt_b_search_asin_title?ie=UTF8&psc=1)
 
