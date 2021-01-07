@@ -1,0 +1,127 @@
+### AUTOMATIONS
+
+### TESTAREA
+        
+- id: nachtabssenkung
+  alias: 'Nachtabsenkung'
+  trigger:
+    - platform: time
+      at: '23:00:00'
+  action:
+    - service: scene.turn_on
+      entity_id: scene.heating_at_night
+    - service: notify.notify
+      data:
+        message: "Nachtabsenkung"
+
+### WORKING AUTOMATIONS
+
+### HEIZUNG AN
+- id: heizung_an
+  alias: 'Heizung an'
+  trigger:
+    - platform: state
+      entity_id: ['sensor.kaipule_technology_co_ltd_im20_door_window_sensor_access_control','sensor.kaipule_technology_co_ltd_im20_door_window_sensor_access_control_2','sensor.kaipule_technology_co_ltd_im20_door_window_sensor_access_control_3','sensor.kaipule_technology_co_ltd_im20_door_window_sensor_access_control_4']
+      from: '22'
+      to: '23'
+    - platform: state
+      entity_id: device_tracker.thomas_handy
+      from: 'not_home'
+      to: 'home'
+    - platform: state
+      entity_id: device_tracker.kathi_handy
+      from: 'not_home'
+      to: 'home'
+    - event_data:
+        entity_id: zwave.aeon_labs_zw130_wallmote_quad
+        scene_id: 1
+        scene_data: 0
+      event_type: zwave.scene_activated
+      platform: event
+  condition:
+  - condition: state
+    entity_id: 'sensor.kaipule_technology_co_ltd_im20_door_window_sensor_access_control'
+    state: '23'
+  - condition: state
+    entity_id: 'sensor.kaipule_technology_co_ltd_im20_door_window_sensor_access_control_2'
+    state: '23'
+  - condition: state
+    entity_id: 'sensor.kaipule_technology_co_ltd_im20_door_window_sensor_access_control_3'
+    state: '23'
+  - condition: state
+    entity_id: 'sensor.kaipule_technology_co_ltd_im20_door_window_sensor_access_control_4'
+    state: '23'
+  - condition: time
+    after: '07:30:00'
+    before: '23:00:00'
+  action:
+    - service: scene.turn_on
+      entity_id: scene.heating_on
+    - service: notify.notify
+      data:
+        message: "Schalte Heizung ein"
+
+### HEIZUNG AUS
+- id: heizung_aus
+  alias: 'Heizung aus'
+  trigger:
+    - platform: state
+      entity_id: ['sensor.kaipule_technology_co_ltd_im20_door_window_sensor_access_control','sensor.kaipule_technology_co_ltd_im20_door_window_sensor_access_control_2','sensor.kaipule_technology_co_ltd_im20_door_window_sensor_access_control_3','sensor.kaipule_technology_co_ltd_im20_door_window_sensor_access_control_4']
+      from: '23'
+      to: '22'
+    - platform: state
+      entity_id: device_tracker.thomas_handy
+      from: 'home'
+      to: 'not_home'
+    - platform: state
+      entity_id: device_tracker.kathi_handy
+      from: 'home'
+      to: 'not_home'
+    - event_data:
+        entity_id: zwave.aeon_labs_zw130_wallmote_quad
+        scene_id: 2
+        scene_data: 0
+      event_type: zwave.scene_activated
+      platform: event
+  action:
+    - service: scene.turn_on
+      entity_id: scene.heating_off
+    #- service: notify.notify
+      #data:
+        #message: "Schalte Heizung aus"
+
+### WASCHMASCHINE TIMER
+- id: waschen_timer
+  alias: 'Timer Waschmaschine'
+  trigger:
+    - event_data:
+        entity_id: zwave.aeon_labs_zw130_wallmote_quad
+        scene_id: 3
+        scene_data: 0
+      event_type: zwave.scene_activated
+      platform: event
+  action:
+    - service: timer.start
+      entity_id: timer.laundry
+    - service: persistent_notification.create
+      data:
+        message: "Timer für Waschmaschine läuft"
+        title: "Wäsche"
+    - service: notify.notify
+      data:
+        message: "Timer für Waschmaschine läuft"
+
+### WÄSCHE FERTIG MESSAGE
+- id: waschen_timer_finished
+  alias: 'Timer Waschmaschine abgelaufen'
+  trigger:
+    platform: event
+    event_type: timer
+  action:
+    - service: persistent_notification.create
+      data:
+        message: "Wäsche ist fertig"
+        title: "Wäsche"
+    - service: notify.notify
+      data:
+        message: "Wäsche ist fertig"
