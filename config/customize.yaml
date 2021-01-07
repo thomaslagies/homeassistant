@@ -1,0 +1,6 @@
+sensor.kaipule_technology_co_ltd_im20_door_window_sensor_access_control:
+  friendly_name: Balkontür
+sensor.kaipule_technology_co_ltd_im20_door_window_sensor_access_control_2:
+  friendly_name: Badfenster
+sensor.kaipule_technology_co_ltd_im20_door_window_sensor_access_control_3:
+  friendly_name: Schlafzimmerfenster
