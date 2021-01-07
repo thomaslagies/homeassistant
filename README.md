@@ -72,6 +72,8 @@ The wallmote is used to trigger:
  
 ### Aeotec Light Bulb
 
+![Z-Wave Light Bulb](https://github.com/thomaslagies/homeassistant/blob/main/images/zwave_led_bulb.jpg)
+
 [Light Bulb from Amazon](https://www.amazon.de/gp/product/B07H9WBHJJ/ref=ppx_yo_dt_b_search_asin_title?ie=UTF8&psc=1)
 
 Extremly bright Z-Wave Plus compatible light bulb. 
