@@ -16,4 +16,4 @@ The flat is completly automated in terms of heating.
 
 ### Aeotec WallMote Quad
 
-(WallMote Quad)[https://www.amazon.de/gp/product/B017DV4C34/ref=ppx_yo_dt_b_search_asin_title?ie=UTF8&psc=1]
+[WallMote Quad at Amazon](https://www.amazon.de/gp/product/B017DV4C34/ref=ppx_yo_dt_b_search_asin_title?ie=UTF8&psc=1)
