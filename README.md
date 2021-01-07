@@ -1,4 +1,4 @@
-# My personal homeassistant settings
+# My personal homeassistant configuration (no plugins needed)
 
 ## Heating
 
