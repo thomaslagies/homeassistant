@@ -12,6 +12,8 @@ The flat is completly automated in terms of heating.
 
 ## Hardware
 
+Note: All my devices are z-wave devices!
+
 ### Raspberry Pi 3B
 
 Hosts homeassistant.
@@ -53,7 +55,7 @@ immediately stay solid for 3 seconds to indicate successful removal from the net
 exclusions. Repeat step 2 for each device as you wish to exclude.
 4. Tap the Z-Stick button to turn off. 
 
-### Aeotec WallMote Quad
+### Aeotec WallMote Quad (4 Button - 8 Inputs tap/hold)
 
 [WallMote Quad from Amazon](https://www.amazon.de/gp/product/B017DV4C34/ref=ppx_yo_dt_b_search_asin_title?ie=UTF8&psc=1)
 
@@ -63,9 +65,42 @@ The wallmote is used to trigger:
  - laundry timer
  - living room light on/off
  
+ It is mounted to the wall via a magnetic plate. 
+ Im looking for additional button actions, but currently 95% of my automations, well, run automaticly.
+ 
 ### Aeotec Light Bulb
 
 [Light Bulb from Amazon](https://www.amazon.de/gp/product/B07H9WBHJJ/ref=ppx_yo_dt_b_search_asin_title?ie=UTF8&psc=1)
 
 Extremly bright Z-Wave Plus compatible light bulb. 
+Wide range of nice looking colors
+
+### Devolo Thermostat
+
+[Devolo Thermostat from Amazon](https://www.amazon.de/gp/product/B00M2JKABQ/ref=ppx_yo_dt_b_search_asin_title?ie=UTF8&psc=1)
+
+I use these thermostats since they are able to read current temperature. 
+If the given threshold is reached, the thermostat will throttle itself until it holds the target temperature.
+
+The thermostats are only used in automatic mode. 
+Triggers are:
+- presence of one of our smartphones in our network
+- time schedules
+- open/closed windows (see door sensors)
+
+### Smart Things Door Sensor
+
+[Door Sensor from Amazon](https://www.amazon.de/gp/product/B07FMDR286/ref=ppx_yo_dt_b_search_asin_title?ie=UTF8&psc=1)
+
+Our flat has 5 windows/doors (Entrance Door has no sensor)
+I currently only use 4 of these sensors, since one sensor is used at a double window.
+Stick the "smart" part on the left window pane, and the "dumb" side on the right one.
+
+Theses sensors worked a 100% of the time for me and control our heating scenes.
+As soon as a window/door opens, the termostats will be throttled.
+If all windows/doors are closed again, the heating scene is triggered.
+
+Since the thermostats only pull every minute or so, there is a small delay in between an open window and a throtteling thermostat.
+This might not be 100% efficient (you want to throttle it immediatly) but in our use case its okay.
+We normaly we air our flat for around 10-20 minutes, several times a day.
 
