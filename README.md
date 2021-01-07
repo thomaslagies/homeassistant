@@ -10,6 +10,25 @@ The flat is completly automated in terms of heating.
 - Cold? -> Trigger a heating boost for some minutes.
 - Night reduction? -> Disable all heating automations between 23:00 and 07:00.
 
+## Laundry
+
+Since our washing machine is in the basement, I can not connect a sensor to it.
+For this I we set a timer via wallmote, which notifies us when the laundry is done.
+
+## Lighting
+
+Lighting is currently a pretty small implementation.
+I only have a single "smart light" which sits behind my monitors.
+It is also not (yet) automated as the rest of my integrations.
+
+You can turn it on or change colors via hassio app on our phones, or by pressing the wallmote button 4 to toggle it on/off
+
+## Open Windows/Doors
+
+The window and door sensors are used to trigger the heating scenes.
+As soon as a sensor detects an open window/door, the heating is shut off.
+All windows/doors need to be closed in order to turn the heating back on.
+
 ## Hardware
 
 Note: All my devices are z-wave devices!
