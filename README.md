@@ -10,6 +10,11 @@ The flat is completly automated in terms of heating.
 - Cold? -> Trigger a heating boost for some minutes.
 - Night reduction? -> Disable all heating automations between 23:00 and 07:00.
 
+## Presence detection
+
+The detection is done via our smartphones.
+As soon as they are connect to the local wifi, the corresponding heating automations are triggered.
+
 ## Laundry
 
 Since our washing machine is in the basement, I can not connect a sensor to it.
