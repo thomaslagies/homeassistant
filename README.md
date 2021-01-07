@@ -14,6 +14,25 @@ The flat is completly automated in terms of heating.
 
 ### Raspberry Pi 3B
 
+Hosts homeassistant.
+
+### Aeotec Z-Wave Stick
+
+[Z-Wave Stick from Amazon](https://www.amazon.de/gp/product/B00YETCNOE/ref=ppx_yo_dt_b_search_asin_title?ie=UTF8&psc=1)
+
 ### Aeotec WallMote Quad
 
-[WallMote Quad at Amazon](https://www.amazon.de/gp/product/B017DV4C34/ref=ppx_yo_dt_b_search_asin_title?ie=UTF8&psc=1)
+[WallMote Quad from Amazon](https://www.amazon.de/gp/product/B017DV4C34/ref=ppx_yo_dt_b_search_asin_title?ie=UTF8&psc=1)
+
+The wallmote is used to trigger:
+
+ - heating on/off
+ - laundry timer
+ - living room light on/off
+ 
+### Aeotec Light Bulb
+
+[Light Bulb from Amazon](https://www.amazon.de/gp/product/B07H9WBHJJ/ref=ppx_yo_dt_b_search_asin_title?ie=UTF8&psc=1)
+
+Extremly bright Z-Wave Plus compatible light bulb. 
+
