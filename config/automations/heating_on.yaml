@@ -1,0 +1,44 @@
+trigger:
+  - platform: state
+    entity_id: ['sensor.kaipule_technology_co_ltd_im20_door_window_sensor_access_control','sensor.kaipule_technology_co_ltd_im20_door_window_sensor_access_control_2','sensor.kaipule_technology_co_ltd_im20_door_window_sensor_access_control_3','sensor.kaipule_technology_co_ltd_im20_door_window_sensor_access_control_4']
+    from: '22'
+    to: '23'
+  - platform: state
+    entity_id: device_tracker.thomas_handy
+    to: 'home'
+  - platform: state
+    entity_id: device_tracker.kathi_handy
+    to: 'home'
+condition:
+  condition: and
+  conditions: 
+    - condition: state
+      entity_id: 'sensor.kaipule_technology_co_ltd_im20_door_window_sensor_access_control'
+      state: '23'
+    - condition: state
+      entity_id: 'sensor.kaipule_technology_co_ltd_im20_door_window_sensor_access_control_2'
+      state: '23'
+    - condition: state
+      entity_id: 'sensor.kaipule_technology_co_ltd_im20_door_window_sensor_access_control_3'
+      state: '23'
+    - condition: state
+      entity_id: 'sensor.kaipule_technology_co_ltd_im20_door_window_sensor_access_control_4'
+      state: '23'
+    - condition: time
+      after: '07:00:00'
+      before: '23:00:00'
+    - condition: or
+      conditions:
+      - condition: state
+        entity_id: device_tracker.thomas_handy
+        state: home
+      - condition: state
+        entity_id: device_tracker.kathi_handy
+        state: home
+action:
+  - service: scene.turn_on
+    entity_id: scene.heating_on
+  - service: persistent_notification.create
+    data:
+      message: '{{ now().strftime("%H:%M") }} AN: Heizung'
+      title: "Heizung"
