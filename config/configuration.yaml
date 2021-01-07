@@ -12,22 +12,23 @@ binary_sensor:
   province: BY
 device_tracker:
 - platform: ping
-  interval_seconds: 100
-  consider_home: 600
+  interval_seconds: 200
+  consider_home: 400
   hosts:
-    thomas_handy: 1.1.1.1
-    kathi_handy: 1.1.1.1
-    thomas_pc: 1.1.1.1
+    thomas_handy:
+    kathi_handy:
 logger:
-  default: info
+  default: critical
+  #default: info
   logs:
     homeassistant.components.yamaha: critical
     custom_components.my_integration: critical
 timer:
   laundry:
-    duration: '01:20:00'
+    duration: '02:00:00'
     icon: 'mdi:washing-machine'
-automation: !include automations.yaml
-group: !include groups.yaml
+automation: !include_dir_list automations
 scene: !include scenes.yaml
+
+group: !include groups.yaml
 script: !include scripts.yaml
