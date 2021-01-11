@@ -1,0 +1,23 @@
+trigger:
+  - platform: state
+    entity_id: device_tracker.thomas_handy
+    to: 'not_home'
+  - platform: state
+    entity_id: device_tracker.kathi_handy
+    to: 'not_home'
+condition:
+  condition: and
+  conditions: 
+    - condition: state
+      entity_id: device_tracker.thomas_handy
+      state: not_home
+    - condition: state
+      entity_id: device_tracker.kathi_handy
+      state: not_home
+action:
+  - service: scene.turn_on
+    entity_id: scene.heating_off
+  - service: persistent_notification.create
+    data:
+      message: '{{ now().strftime("%H:%M") }} AUS: Heizung'
+      title: "Heizung"
