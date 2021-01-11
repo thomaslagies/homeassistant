@@ -18,7 +18,7 @@ As soon as they are connect to the local wifi, the corresponding heating automat
 ## Laundry
 
 Since our washing machine is in the basement, I can not connect a sensor to it.
-For this I we set a timer via wallmote, which notifies us when the laundry is done.
+For this we set a timer via wallmote, which notifies us when the laundry is done.
 
 ## Lighting
 
@@ -136,5 +136,5 @@ If all windows/doors are closed again, the heating scene is triggered.
 
 Since the thermostats only pull every minute or so, there is a small delay in between an open window and a throtteling thermostat.
 This might not be 100% efficient (you want to throttle it immediatly) but in our use case its okay.
-We normaly we air our flat for around 10-20 minutes, several times a day.
+We normaly air our flat for around 10-20 minutes, several times a day.
 
