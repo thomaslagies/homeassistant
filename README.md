@@ -126,6 +126,8 @@ Triggers are:
 
 [Door Sensor from Amazon](https://www.amazon.de/gp/product/B07FMDR286/ref=ppx_yo_dt_b_search_asin_title?ie=UTF8&psc=1)
 
+[Manual](https://fccid.io/2AKXA-IM20ZWAVEUSA/Users-Manual/User-Manual-3307318)
+
 Our flat has 5 windows/doors (Entrance Door has no sensor)
 I currently only use 4 of these sensors, since one sensor is used at a double window.
 Stick the "smart" part on the left window pane, and the "dumb" side on the right one.
