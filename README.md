@@ -53,6 +53,8 @@ It plugs in via USB and has an easy to use pairing button.
 
 [Manual](https://www.generationrobots.com/media/AeonLabsZwaveZstickS2/Aeon-Labs-Controleur-Z-wave-Z-stick-S2-user-manual.pdf)
 
+[Factory Reset](https://aeotec.freshdesk.com/support/solutions/articles/6000121947-how-to-manually-factory-reset-z-stick-gen5-)
+
 The Z-Stick operates in three distinct modes: Inclusion-Mode, Removal-Mode and SerialAPIMode. Both Inclusion-Mode and Removal-Mode require the Z-Stick to be unplugged from the
 USB connector of the host, while SerialAPI-Mode requires that the Z-Stick to be plugged into
 the USB connector of the host.
