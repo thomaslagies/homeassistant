@@ -113,6 +113,8 @@ Wide range of nice looking colors
 
 [Devolo Thermostat from Amazon](https://www.amazon.de/gp/product/B00M2JKABQ/ref=ppx_yo_dt_b_search_asin_title?ie=UTF8&psc=1)
 
+[Manual](http://manuals-backend.z-wave.info/make.php?lang=DE&sku=DEVE9356&cert=ZC08-15020003)
+
 I use these thermostats since they are able to read current temperature. 
 If the given threshold is reached, the thermostat will throttle itself until it holds the target temperature.
 
