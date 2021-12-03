@@ -122,6 +122,9 @@ Wide range of nice looking colors
   Again, make sure you have that 'click' so the internals wont turn instead.
   Now press the middle button for some seconds. 'M' will show on the display. Press the middle button again an the thermostat will press itself against the heater threads. It should not be lose afterwards.
   To unmount, repeat the same process. In the end the firm grip will losen and you are able to unscrew the thermostat.
+- How to reset ZWAVE?
+  Since this is not documented anywhere, this is what kinda worked for me.
+  Remove one battery. Press and hold the middle button for 10 seconds while inserting the battery again. The thermostat will flash wildy, meaning the reset worked.
 
 [Devolo Thermostat from Amazon](https://www.amazon.de/gp/product/B00M2JKABQ/ref=ppx_yo_dt_b_search_asin_title?ie=UTF8&psc=1)
 
