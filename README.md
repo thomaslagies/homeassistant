@@ -111,6 +111,18 @@ Wide range of nice looking colors
 
 ![Z-Wave Thermostat](https://github.com/thomaslagies/homeassistant/blob/main/images/zwave_thermostat.jpg)
 
+#### Own Experience
+
+- How to install?
+  There are two extensions for different valve types included. You may install them by sticking a flat head screwdriver into the slit in the battery compartment. 
+  Then turn the thermostat until you can feel resistance.
+  Now you are able to screw/unscrew the extensions from the thermostat
+- How to mount/unmount to heater?
+  Once the correct extension is in place, you may screw the whole thing with good pressure against the heaters thread.
+  Again, make sure you have that 'click' so the internals wont turn instead.
+  Now press the middle button for some seconds. 'M' will show on the display. Press the middle button again an the thermostat will press itself against the heater threads. It should not be lose afterwards.
+  To unmount, repeat the same process. In the end the firm grip will losen and you are able to unscrew the thermostat.
+
 [Devolo Thermostat from Amazon](https://www.amazon.de/gp/product/B00M2JKABQ/ref=ppx_yo_dt_b_search_asin_title?ie=UTF8&psc=1)
 
 [Manual](http://manuals-backend.z-wave.info/make.php?lang=DE&sku=DEVE9356&cert=ZC08-15020003)
