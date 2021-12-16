@@ -2,8 +2,6 @@
 
 ## Hardware
 
-Note: All my devices are z-wave devices!
-
 ### Raspberry Pi 4
 
 Hosts homeassistant.
