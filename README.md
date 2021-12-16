@@ -1,48 +1,19 @@
-# My personal homeassistant configuration (no plugins needed)
-
-## Heating
-
-The flat is completly automated in terms of heating.
-
-- Someone opened a window/door? -> Turn all heating off.
-- No ones home? -> Turn all heating off.
-- Just arrived at home? -> Wait some time (e.g. for ventilating after arrival) turn heating on.
-- Cold? -> Trigger a heating boost for some minutes.
-- Night reduction? -> Disable all heating automations between 23:00 and 07:00.
-
-## Presence detection
-
-The detection is done via our smartphones.
-As soon as they are connect to the local wifi, the corresponding heating automations are triggered.
-
-## Laundry
-
-Since our washing machine is in the basement, I can not connect a sensor to it.
-For this we set a timer via wallmote, which notifies us when the laundry is done.
-
-## Lighting
-
-Lighting is currently a pretty small implementation.
-I only have a single "smart light" which sits behind my monitors.
-It is also not (yet) automated as the rest of my integrations.
-
-You can turn it on or change colors via hassio app on our phones, or by pressing the wallmote button 4 to toggle it on/off
-
-## Open Windows/Doors
-
-The window and door sensors are used to trigger the heating scenes.
-As soon as a sensor detects an open window/door, the heating is shut off.
-All windows/doors need to be closed in order to turn the heating back on.
+# My personal homeassistant configuration
 
 ## Hardware
 
 Note: All my devices are z-wave devices!
 
-### Raspberry Pi 3B
+### Raspberry Pi 4
 
 Hosts homeassistant.
 
 ### Aeotec Z-Wave Stick
+
+Note!
+
+This stick does not work properly when it is connect directly to the pi 4.
+You need to bridge in any kind of USB hub, otherwise you run into voltage issues while detecting the stick in `z-wave js`
 
 ![Z-Wave Stick](https://github.com/thomaslagies/homeassistant/blob/main/images/zwave_stick.jpg)
 
@@ -106,6 +77,10 @@ The wallmote is used to trigger:
 
 Extremly bright Z-Wave Plus compatible light bulb. 
 Wide range of nice looking colors
+
+#### How to reset?
+
+To reset to factory settings, power the light on 6 times with 0.5-2.0s delay.
 
 ### Devolo Thermostat
 
