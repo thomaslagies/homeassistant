@@ -4,7 +4,7 @@
 
 ### Raspberry Pi 4
 
-Hosts homeassistant.
+Hosts homeassistant and Node Red
 
 ### Aeotec Z-Wave Stick
 
