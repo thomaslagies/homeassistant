@@ -1,0 +1,187 @@
+[
+    {
+        "id": "44c8f86e.a64488",
+        "type": "trigger-state",
+        "z": "ae17c6a290674c7a",
+        "name": "Front Door Opened",
+        "server": "459ac1e1.0ae56",
+        "version": 1,
+        "exposeToHomeAssistant": false,
+        "haConfig": [
+            {
+                "property": "name",
+                "value": ""
+            },
+            {
+                "property": "icon",
+                "value": ""
+            }
+        ],
+        "entityid": "binary_sensor.door_window_sensor_access_control_window_door_is_open_4",
+        "entityidfiltertype": "exact",
+        "debugenabled": false,
+        "constraints": [
+            {
+                "targetType": "this_entity",
+                "targetValue": "",
+                "propertyType": "current_state",
+                "comparatorType": "is",
+                "comparatorValueDatatype": "str",
+                "comparatorValue": "on",
+                "propertyValue": "new_state.state"
+            },
+            {
+                "targetType": "this_entity",
+                "targetValue": "",
+                "propertyType": "previous_state",
+                "comparatorType": "is",
+                "comparatorValueDatatype": "str",
+                "comparatorValue": "off",
+                "propertyValue": "old_state.state"
+            }
+        ],
+        "inputs": 1,
+        "outputs": 2,
+        "customoutputs": [],
+        "outputinitially": false,
+        "state_type": "str",
+        "enableInput": true,
+        "x": 210,
+        "y": 580,
+        "wires": [
+            [
+                "af046290.fdf2b"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "af046290.fdf2b",
+        "type": "api-call-service",
+        "z": "ae17c6a290674c7a",
+        "name": "Snapshot Entities",
+        "server": "459ac1e1.0ae56",
+        "version": 3,
+        "debugenabled": false,
+        "service_domain": "scene",
+        "service": "create",
+        "entityId": "",
+        "data": "{\"scene_id\":\"before\",\"snapshot_entities\":[\"light.bulb_6_multi_color\",\"light.monitor_links\",\"light.monitor_rechts\",\"light.monitor_mitte\"]}",
+        "dataType": "json",
+        "mergecontext": "",
+        "mustacheAltTags": false,
+        "outputProperties": [],
+        "queue": "none",
+        "x": 410,
+        "y": 560,
+        "wires": [
+            [
+                "7af76536.dfa6cc"
+            ]
+        ]
+    },
+    {
+        "id": "7af76536.dfa6cc",
+        "type": "api-call-service",
+        "z": "ae17c6a290674c7a",
+        "name": "Alarm lights",
+        "server": "459ac1e1.0ae56",
+        "version": 3,
+        "debugenabled": false,
+        "service_domain": "light",
+        "service": "turn_on",
+        "entityId": "light.bulb_6_multi_color, light.monitor_links, light.monitor_mitte, light.monitor_rechts",
+        "data": "{\"rgb_color\":[255,0,0],\"brightness\":128}",
+        "dataType": "json",
+        "mergecontext": "",
+        "mustacheAltTags": false,
+        "outputProperties": [],
+        "queue": "none",
+        "x": 590,
+        "y": 540,
+        "wires": [
+            [
+                "bc7cd847b6bab546"
+            ]
+        ]
+    },
+    {
+        "id": "c6f24589.9beb48",
+        "type": "delay",
+        "z": "ae17c6a290674c7a",
+        "name": "",
+        "pauseType": "delay",
+        "timeout": "5",
+        "timeoutUnits": "seconds",
+        "rate": "1",
+        "nbRateUnits": "1",
+        "rateUnits": "second",
+        "randomFirst": "1",
+        "randomLast": "5",
+        "randomUnits": "seconds",
+        "drop": false,
+        "allowrate": false,
+        "outputs": 1,
+        "x": 860,
+        "y": 500,
+        "wires": [
+            [
+                "f762690.97b1198"
+            ]
+        ]
+    },
+    {
+        "id": "f762690.97b1198",
+        "type": "api-call-service",
+        "z": "ae17c6a290674c7a",
+        "name": "Restore Entities State",
+        "server": "459ac1e1.0ae56",
+        "version": 3,
+        "debugenabled": false,
+        "service_domain": "scene",
+        "service": "turn_on",
+        "entityId": "scene.before",
+        "data": "",
+        "dataType": "json",
+        "mergecontext": "",
+        "mustacheAltTags": false,
+        "outputProperties": [],
+        "queue": "none",
+        "x": 1040,
+        "y": 480,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "bc7cd847b6bab546",
+        "type": "api-call-service",
+        "z": "ae17c6a290674c7a",
+        "name": "Flash",
+        "server": "459ac1e1.0ae56",
+        "version": 3,
+        "debugenabled": false,
+        "service_domain": "light",
+        "service": "turn_on",
+        "entityId": "light.monitor_links, light.monitor_mitte, light.monitor_rechts",
+        "data": "{\"flash\": \"long\"}",
+        "dataType": "json",
+        "mergecontext": "",
+        "mustacheAltTags": false,
+        "outputProperties": [],
+        "queue": "none",
+        "x": 730,
+        "y": 520,
+        "wires": [
+            [
+                "c6f24589.9beb48"
+            ]
+        ]
+    },
+    {
+        "id": "459ac1e1.0ae56",
+        "type": "server",
+        "name": "Home Assistant",
+        "addon": true
+    }
+]
