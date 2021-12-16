@@ -1,34 +1,23 @@
-homeassistant:
-  customize: !include customize.yaml
-
+# Configure a default setup of Home Assistant (frontend, api, etc)
 default_config:
-tts:
-- platform: google_translate
-zwave:
-  usb_path: /dev/ttyACM0
-binary_sensor:
-- platform: workday
-  country: DE
-  province: BY
-device_tracker:
-- platform: ping
-  interval_seconds: 200
-  consider_home: 400
-  hosts:
-    thomas_handy:
-    kathi_handy:
-logger:
-  default: critical
-  #default: info
-  logs:
-    homeassistant.components.yamaha: critical
-    custom_components.my_integration: critical
-timer:
-  laundry:
-    duration: '02:00:00'
-    icon: 'mdi:washing-machine'
-automation: !include_dir_list automations
-scene: !include scenes.yaml
+
+# MariaDB
+recorder:
+  db_url: !secret maria_db
+
+# Monitor
+sensor:
+  - platform: systemmonitor
+    resources:
+      - type: processor_use
+      - type: processor_temperature
+      - type: memory_free
+      - type: disk_use_percent
+        arg: /
+      - type: disk_use
+      - type: disk_free
 
 group: !include groups.yaml
+automation: !include automations.yaml
 script: !include scripts.yaml
+scene: !include scenes.yaml

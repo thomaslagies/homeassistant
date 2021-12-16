@@ -1,9 +1,0 @@
-trigger:
-  - platform: time
-    at: '23:05:00'
-action:
-  - service: scene.turn_on
-    entity_id: scene.heating_at_night
-  - service: notify.notify
-    data:
-      message: "Nachtabsenkung"
