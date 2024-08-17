@@ -58,6 +58,8 @@ exclusions. Repeat step 2 for each device as you wish to exclude.
 
 [WallMote Quad from Amazon](https://www.amazon.de/gp/product/B017DV4C34/ref=ppx_yo_dt_b_search_asin_title?ie=UTF8&psc=1)
 
+[Manual](https://manuals-backend.z-wave.info/make.php?lang=en&sku=AEOEZW130)
+
 The wallmote is used to trigger:
 
  - heating on/off
